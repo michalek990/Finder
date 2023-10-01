@@ -19,12 +19,12 @@ public class City {
     @Column(name = "name")
     private String name;
 
-//    @ManyToOne
-//    @JoinColumn(name = "country_id")
-//    private Country country;
-//
-//    @OneToMany(mappedBy = "city")
-//    private List<Address> addresses;
+    @ManyToOne
+    @JoinColumn(name = "country_id")
+    private Country country;
+
+    @OneToMany(mappedBy = "city")
+    private List<Address> addresses;
 }
 
 
