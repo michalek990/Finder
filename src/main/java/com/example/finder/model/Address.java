@@ -4,8 +4,10 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
-@Table(name = "address")
+@Table(name = "addresses")
 @Getter
 @Setter
 public class Address {
@@ -29,4 +31,7 @@ public class Address {
     @ManyToOne
     @JoinColumn(name = "city_id")
     private City city;
+
+    @OneToMany(mappedBy = "address")
+    private List<User> users;
 }
